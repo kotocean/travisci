@@ -1,4 +1,9 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
+language: php
+
+services:
+  - docker
+
+scripts:
+  - docker build -t w1491413492/yzmcms:6.0.0
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push w1491413492/yzmcms:6.0.0

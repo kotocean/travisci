@@ -3,6 +3,8 @@ language: php
 services:
   - docker
 
+install: skip
+
 scripts:
   - docker build -t w1491413492/yzmcms:6.0.0
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
